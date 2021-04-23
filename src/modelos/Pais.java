@@ -44,37 +44,24 @@ public class Pais {
 			pos+=2;
 			
 		}
-		//Mutação
-		String nr = individuos.get(individuos.size()-1)+"";
-		   nr = nr.substring(0,nr.indexOf("."));
-		   int nrSorteado= r.nextInt(Integer.parseInt(nr)) ;		
-		int genamutar=individuos.get(nrSorteado).cromossomo[r.nextInt(tamCromossomo)];
+	
+		System.out.println("Crossover: "+posrCrossover);
+		return p;
+	}
+	
+	public void mutacao() {
+		Random r = new Random();
+		int indSorteado= r.nextInt(individuos.size()-1) ;		
+		int genamutar=individuos.get(indSorteado).cromossomo[r.nextInt(4)];
 		int genmutado;
 		if (genamutar == 1) {
 			genmutado=0;
-		}else {
-			genmutado=1;
-		}
-		
-		individuos.get(nrSorteado).cromossomo[genamutar]=genmutado;
-	/*	for (Individuo individuo : individuos) {
-			
-		}*/
-		
-		
-		System.out.println("Crossover: "+posrCrossover);
-		/*
-		Individuo pai1 = individuos.get(0);
-		Individuo pai2 = individuos.get(1);
-		
-		Individuo[] filhos = fazCrossover(posrCrossover, pai1, pai2);
-		
-		System.out.println(pai1);
-		System.out.println(pai2);
-		System.out.println(filhos[0]);
-		System.out.println(filhos[1]);
-		*/
-		return p;
+	    }
+		else {	    	
+				genmutado=1;
+			 }
+				
+		individuos.get(indSorteado).cromossomo[genamutar]=genmutado;
 	}
 		
 	public Individuo[] fazCrossover(int pos, Individuo pai1, Individuo pai2) {
