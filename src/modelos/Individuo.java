@@ -5,7 +5,9 @@ import java.util.Random;
 
 public class Individuo {
    public int[] cromossomo;
-   public int tempo;
+  
+
+public int tempo;
    public int valor;
    public int lucro;
    public int fitness;
@@ -15,7 +17,7 @@ public class Individuo {
    public void populaCromossomo(int qtItens, int qtProducao) {
 	   cromossomo = new int[qtItens];
 	   //sorteia cada gen de acordo com estoque disponivel	   
-	  cromossomo[0] = sorteia(qtProducao + 1);	  
+	  cromossomo[0] = sorteia(qtProducao + 1);	 
 	  qtProducao=qtProducao-cromossomo[0];
 	  
 	  cromossomo[1] = sorteia(qtProducao+1);
@@ -62,6 +64,7 @@ public class Individuo {
 	   }
    }
    
+   
    @Override
    public String toString() {
 	   String ret = "";
@@ -70,5 +73,5 @@ public class Individuo {
 	   }
 	   return ret + "- Fitness: "+ fitness+" tempo: "+tempo+" valor: "+valor+ " LUCRO: "+lucro+" Probabilidade: "+probabilidade;
    }
-   
+
 }

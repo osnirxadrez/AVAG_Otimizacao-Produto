@@ -1,6 +1,7 @@
 package modelos;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Populacao {
         
@@ -67,5 +68,15 @@ public class Populacao {
 		}
 		
 		return soma;
+	}
+	
+	public void mutacao() {
+		Random r = new Random();
+		int indSorteado= r.nextInt(individuos.size()-1) ;		
+		int genamutar=individuos.get(indSorteado).cromossomo[r.nextInt(4)];
+		int genmutado= r.nextInt(401);
+		
+				
+		individuos.get(indSorteado).cromossomo[genamutar]=genmutado;
 	}
 }
