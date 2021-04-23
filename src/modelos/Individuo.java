@@ -7,6 +7,7 @@ public class Individuo {
    public int[] cromossomo;
    public int tempo;
    public int valor;
+   public int lucro;
    public int fitness;
    public int materiaprima;
    public double probabilidade;
@@ -49,13 +50,15 @@ public class Individuo {
 		   if(gene != 0 ) {
 			  materiaprima=materiaprima+ gene;
 			   tempo+=gene*itens.get(i).tempo;
-			   valor+=gene*itens.get(i).valor;		   
+			   valor+=gene*itens.get(i).valor;	
+			   lucro+=gene*itens.get(i).lucro;
+			   
 		   }
 	   }
-	   fitness = valor;
+	   fitness = lucro;
 	   //penalidade fitness varia
-	   if(tempo > 10000 || materiaprima > capacidadeProducao ) {
-		   fitness -= 80000;
+	   if(tempo > 10000 || materiaprima > capacidadeProducao || valor > 50000 ) {
+		   fitness -= 23000;
 	   }
    }
    
@@ -65,7 +68,7 @@ public class Individuo {
 	   for(int i : cromossomo) {
 		   ret += i + " ";
 	   }
-	   return ret + "- Fitness: "+ fitness+" tempo: "+tempo+" valor: "+valor+ " Probabilidade: "+probabilidade;
+	   return ret + "- Fitness: "+ fitness+" tempo: "+tempo+" valor: "+valor+ " LUCRO: "+lucro+" Probabilidade: "+probabilidade;
    }
    
 }

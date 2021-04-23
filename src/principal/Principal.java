@@ -49,11 +49,11 @@ public class Principal {
 	
 	static void iniciaParaTestes() {
 		capacidadeProducao = 400;
-		qtPorGeracao = 50;
-		itens.add(new Item(100, 20));
-		itens.add(new Item(120, 30));
-		itens.add(new Item(150, 25));
-		itens.add(new Item(120, 28));
+		qtPorGeracao = 20;
+		itens.add(new Item(100, 20, 60));
+		itens.add(new Item(120, 30, 80));
+		itens.add(new Item(150, 25, 90));
+		itens.add(new Item(120, 28, 50));
 		
 	}	
 	
