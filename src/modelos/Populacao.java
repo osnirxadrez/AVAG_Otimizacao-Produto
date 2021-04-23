@@ -26,9 +26,9 @@ public class Populacao {
 		return true;
 	}
 	
-	public void calculaFitness2(ArrayList<Item> itens, int capacidadeMochila) {
+	public void calculaFitness2(ArrayList<Item> itens, int capacidadeProducao) {
 		for (Individuo individuo : individuos) {
-			individuo.calculaFitness(itens, capacidadeMochila);
+			individuo.calculaFitness(itens, capacidadeProducao);
 		}
 	}
 	

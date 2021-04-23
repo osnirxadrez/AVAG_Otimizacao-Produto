@@ -5,17 +5,17 @@ import javax.swing.JOptionPane;
 public class Item {
  
    public int valor;
-   public int peso;
+   public int tempo;
    
    
    public Item() {
 	   valor = Integer.parseInt(JOptionPane.showInputDialog("Valor"));
-	   peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+	   tempo = Integer.parseInt(JOptionPane.showInputDialog("tempo"));
    }
    
-   public Item(int valor, int peso) {
+   public Item(int valor, int tempo) {
 	  this.valor = valor;
-	  this.peso = peso;
+	  this.tempo = tempo;
    }
    
    
