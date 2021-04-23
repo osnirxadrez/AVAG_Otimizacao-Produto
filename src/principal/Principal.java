@@ -49,7 +49,7 @@ public class Principal {
 	
 	static void iniciaParaTestes() {
 		capacidadeProducao = 400;
-		qtPorGeracao = 16;
+		qtPorGeracao = 50;
 		itens.add(new Item(100, 20));
 		itens.add(new Item(120, 30));
 		itens.add(new Item(150, 25));
@@ -59,7 +59,7 @@ public class Principal {
 	
 	
 	static void criaPopulacao() {
-		populacao.montaPopulacao(qtPorGeracao, itens.size());
+		populacao.montaPopulacao(qtPorGeracao, itens.size(), capacidadeProducao);
 		populacao.calculaFitness2(itens, capacidadeProducao);
 	}
 

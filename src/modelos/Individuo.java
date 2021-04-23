@@ -11,16 +11,25 @@ public class Individuo {
    public int materiaprima;
    public double probabilidade;
    
-   public void populaCromossomo(int qtItens) {
+   public void populaCromossomo(int qtItens, int qtProducao) {
 	   cromossomo = new int[qtItens];
-	   for (int i=0; i<qtItens; i++) {
-		   cromossomo[i] = sorteia();
-	   }
+	   //sorteia cada gen de acordo com estoque disponivel	   
+	  cromossomo[0] = sorteia(qtProducao + 1);	  
+	  qtProducao=qtProducao-cromossomo[0];
+	  
+	  cromossomo[1] = sorteia(qtProducao+1);
+	  qtProducao=qtProducao-cromossomo[1];
+	  
+	  cromossomo[2] = sorteia(qtProducao+1);
+	  qtProducao=qtProducao-cromossomo[2];
+	  
+	  cromossomo[3] = sorteia(qtProducao+1);
+	  
+	   
    }
-   
-   public int sorteia() {
+     public int sorteia(int estoque) {
 	   Random r = new Random();
-	   return r.nextInt(401);
+	   return r.nextInt(estoque);
    }
   //verifica se  é mesmo cromossomo
    public boolean verificaClone(Individuo outro) {
@@ -46,7 +55,7 @@ public class Individuo {
 	   fitness = valor;
 	   //penalidade fitness varia
 	   if(tempo > 10000 || materiaprima > capacidadeProducao ) {
-		   fitness -= 56000;
+		   fitness -= 80000;
 	   }
    }
    
@@ -54,7 +63,7 @@ public class Individuo {
    public String toString() {
 	   String ret = "";
 	   for(int i : cromossomo) {
-		   ret += i + "";
+		   ret += i + " ";
 	   }
 	   return ret + "- Fitness: "+ fitness+" tempo: "+tempo+" valor: "+valor+ " Probabilidade: "+probabilidade;
    }

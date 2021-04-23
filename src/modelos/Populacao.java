@@ -6,11 +6,11 @@ public class Populacao {
         
 	public ArrayList<Individuo> individuos = new ArrayList<Individuo>();
 	
-	public void montaPopulacao(int qtIndividuos, int qtItens) {
+	public void montaPopulacao(int qtIndividuos, int qtItens, int capacidadeProducao) {
 		int qtInseridos = 0;
 		while(qtInseridos < qtIndividuos) {
 			Individuo ind = new Individuo();
-			ind.populaCromossomo(qtItens);
+			ind.populaCromossomo(qtItens, capacidadeProducao);
 			if(podeInserirListaIndividuos(ind));{
 			individuos.add(ind);
 			qtInseridos++;
