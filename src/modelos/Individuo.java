@@ -57,10 +57,10 @@ public int tempo;
 			   
 		   }
 	   }
-	   fitness = lucro;
+	   fitness = valor - lucro;
 	   //penalidade fitness varia
 	   if(tempo > 10000 || materiaprima > capacidadeProducao || valor > 50000 ) {
-		   fitness -= 23000;
+		   fitness += 50000;
 	   }
    }
    
