@@ -43,13 +43,14 @@ public class Populacao {
 		return menor;
 	}
 	
+	
 	public void calculaProbabilidades() {
 		int soma = somaFitnessPopulacao();
 		int menor = menorFitnessPopulacao();
 		for (Individuo ind : individuos) {
 			int temp = ind.fitness - menorFitnessPopulacao();
 			temp = temp == 0 ? 1 : temp;
-			ind.probabilidade = ((double)temp / (double)soma) *100.0;
+			ind.probabilidade = ( (double)soma /(double)temp ) ;//*100.0
 		}
 	}
 	
@@ -69,7 +70,7 @@ public class Populacao {
 		
 		return soma;
 	}
-	
+		
 	public void mutacao() {
 		Random r = new Random();
 		int indSorteado= r.nextInt(individuos.size()-1) ;		
